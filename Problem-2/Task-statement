@@ -1,0 +1,17 @@
+Automated Backup solution:
+Write a script to automate the backup of a specified directory to a remote server or a cloud storage solution. The script should provide a report on the sucess or failure of the backup operation.
+
+
+Conditions/specifications considered for task:
+
+1. Backing up the wisecow-application logs.
+2. Used AWS s3bucket as the destination for the backup.
+3. Assuming that the ec2 in which the wisecow-application was hosted has IAM role attached with s3:PutObject persmission.
+4. A bucket named as "wisecow-backup-bucket" exists in AWS account.
+
+Backup was done at 1AM everyday
+
+```
+corntab -e
+0 1 * * * wisecow-backup.sh
+```
